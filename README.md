@@ -22,7 +22,7 @@ curl localhost:9393/ServiceC
 
 **2. Instrument the application using the java agent (dd-java-agent.jar)**
 
-`java -javaagent:./dd-java-agent.jar -Ddd.agent.host=<host where the DD agent runs> -Ddd.agent.port=8126 -Ddd.trace.methods=hello.GreetingController[doSomeStuff,doSomeOtherStuff] -Ddd.service.name=SpringBootTest0 -jar springtest0-1.0.jar --server.port=9393`
+``java -javaagent:./dd-java-agent.jar -Ddd.agent.host=<host where the DD agent runs> -Ddd.agent.port=8126 -Ddd.trace.methods=hello.GreetingController[doSomeStuff,doSomeOtherStuff] -Ddd.service.name=SpringBootTest0 -jar springtest0-1.0.jar --server.port=9393``
   
 For more details https://docs.datadoghq.com/tracing/setup/java/
 
