@@ -12,7 +12,7 @@
 ### 4. Test the application
 `curl localhost:9393/ServiceC`
 
-*This will return the string *ServiceD* *
+*This will return the string **ServiceD***
 
 ### 5. How to use the java agent
 
