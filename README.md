@@ -26,3 +26,4 @@
   
 For more details https://docs.datadoghq.com/tracing/setup/java/
 
+![Results in the UI]()
