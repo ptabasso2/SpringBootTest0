@@ -1,18 +1,18 @@
 ## SpringBootTest0
 
 ### 1. Cloning repository
-git clone https://github.com/ptabasso2/SpringBootTest0.git
+`git clone https://github.com/ptabasso2/SpringBootTest0.git`
 
 ### 2. Build project
-./gradlew build
+`./gradlew build`
 
 ### 3. Run the application
-java -jar build/libs/springtest0-1.0.jar --server.port=9393
+`java -jar build/libs/springtest0-1.0.jar --server.port=9393`
 
 ### 4. Test the application
-curl localhost:9393/ServiceC
+`curl localhost:9393/ServiceC`
 
-*This will return ServiceD*
+*This will return the string *ServiceD* *
 
 ### 5. How to use the java agent
 
@@ -22,7 +22,7 @@ curl localhost:9393/ServiceC
 
 **2. Instrument the application using the java agent (dd-java-agent.jar)**
 
-``java -javaagent:./dd-java-agent.jar -Ddd.agent.host=<host where the DD agent runs> -Ddd.agent.port=8126 -Ddd.trace.methods=hello.GreetingController[doSomeStuff,doSomeOtherStuff] -Ddd.service.name=SpringBootTest0 -jar springtest0-1.0.jar --server.port=9393``
+`java -javaagent:./dd-java-agent.jar -Ddd.agent.host=<host where the DD agent runs> -Ddd.agent.port=8126 -Ddd.trace.methods=hello.GreetingController[doSomeStuff,doSomeOtherStuff] -Ddd.service.name=SpringBootTest0 -jar springtest0-1.0.jar --server.port=9393`
   
 For more details https://docs.datadoghq.com/tracing/setup/java/
 
