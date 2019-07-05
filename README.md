@@ -26,4 +26,6 @@
   
 For more details https://docs.datadoghq.com/tracing/setup/java/
 
+***3. Result in the UI ***
+
 ![Results in the UI](https://github.com/ptabasso2/SpringBootTest0/blob/master/img/image.png)
