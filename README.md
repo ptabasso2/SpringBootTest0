@@ -1,9 +1,9 @@
 ## SpringBootTest0
 
-### 1. Cloning repository
+### 1. Clone the repository
 `git clone https://github.com/ptabasso2/SpringBootTest0.git`
 
-### 2. Build project
+### 2. Build the project
 `./gradlew build`
 
 ### 3. Run the application
@@ -14,7 +14,7 @@
 
 *This will return the string **ServiceD***
 
-### 5. How to use the java agent
+### 5. Now use the java agent
 
 ***1. Make sure the DD Agent is deployed, configured to accept APM traces and started***
 
