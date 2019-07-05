@@ -1,0 +1,23 @@
+FROM pejdd/pgbase:v1
+
+RUN alias ll='ls -lrt'
+
+RUN apt update \
+        && apt -y install \
+            curl \
+            dnsutils \
+            iputils-ping \
+            net-tools \
+            netcat \
+            php7.0-fpm \
+            php7.0-curl \
+            procps \
+            vim \
+            wget \
+        && rm -rf /var/lib/apt/lists
+
+COPY springtest0-1.0.jar springtest0-1.0.jar
+COPY dd-java-agent.jar dd-java-agent.jar
+
+EXPOSE 9393
+CMD java -javaagent:./dd-java-agent.jar -Ddd.agent.host=datadog -Ddd.agent.port=8126 -Ddd.trace.methods=hello.GreetingController[doSomeStuff,doSomeOtherStuff] -Ddd.service.name=SpringBootTest0 -jar springtest0-1.0.jar --server.port=9393

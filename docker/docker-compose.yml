@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  datadog:
+    container_name: ddagent0 
+    image: datadog/agent:latest
+    env_file:
+      - ./apikey.env
+    environment:
+      - DD_HOSTNAME=datadog
+      - DD_APM_ENABLED=true
+      - DD_PROCESS_AGENT_ENABLED=true
+    ports:
+     - 8125:8125/udp
+     - 8126:8126/tcp
+    volumes:
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/passwd:/etc/passwd:ro
+    networks:
+      - netw1
+
+  springboot:
+    ports:
+     - "9393:9393"
+    container_name: springtest0
+    image: pejdd/springtest0:v1 
+    hostname: springboot
+    networks:
+      - netw1
+
+networks:
+    netw1:
+      external: true
